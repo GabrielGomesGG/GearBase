@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entrar · GearBase</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <main class="pagina-login">
+        <form id="form-login" class="caixa-login">
+            <div>
+                <h1 class="nome-sistema">GearBase</h1>
+                <p class="topo-descricao">Concessionária e oficina</p>
+            </div>
+
+            <div class="campo">
+                <label for="matricula">Matrícula</label>
+                <input id="matricula" name="matricula" required maxlength="10"
+                       autocomplete="username" autocapitalize="characters" spellcheck="false">
+            </div>
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input id="senha" name="senha" type="password" required autocomplete="current-password">
+            </div>
+
+            <p id="login-erro" class="erro" role="alert" hidden></p>
+            <button type="submit" id="entrar" class="botao botao-principal">Entrar</button>
+        </form>
+    </main>
+</body>
+</html>

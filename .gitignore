@@ -1,0 +1,10 @@
+# Arquivos gerados pela compilação
+bin/
+obj/
+
+# Configurações locais do Visual Studio
+.vs/
+*.user
+
+# Guarda a senha do MySQL: cada um cria o seu (veja o README)
+GearBase/GearBase/DataBase/Conexao.cs

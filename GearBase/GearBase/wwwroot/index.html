@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GearBase</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/entidades.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <a class="nome-sistema" href="#/">GearBase</a>
+        <span class="topo-descricao">Concessionária e oficina</span>
+        <div class="usuario">
+            <span id="usuario-nome"></span>
+            <button type="button" id="sair" class="botao-linha">Sair</button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <nav class="menu" aria-label="Cadastros">
+            <ul>
+                <li><a href="#/">Início</a></li>
+            </ul>
+            <h2>Estoque</h2>
+            <ul>
+                <li><a href="#/veiculos">Veículos</a></li>
+                <li><a href="#/modelos">Modelos</a></li>
+                <li><a href="#/marcas">Marcas</a></li>
+                <li><a href="#/opcionais">Opcionais</a></li>
+                <li><a href="#/veiculo-opcionais">Opcionais por veículo</a></li>
+            </ul>
+            <h2>Comercial</h2>
+            <ul>
+                <li><a href="#/vendas">Vendas</a></li>
+                <li><a href="#/test-drives">Test drives</a></li>
+                <li><a href="#/clientes">Clientes</a></li>
+            </ul>
+            <h2>Oficina</h2>
+            <ul>
+                <li><a href="#/ordens-servico">Ordens de serviço</a></li>
+                <li><a href="#/itens-ordem-servico">Peças usadas nas OS</a></li>
+                <li><a href="#/pecas">Peças</a></li>
+                <li><a href="#/fornecedores">Fornecedores</a></li>
+            </ul>
+            <h2>Financeiro</h2>
+            <ul>
+                <li><a href="#/caixa">Caixa</a></li>
+            </ul>
+            <h2>Equipe</h2>
+            <ul>
+                <li><a href="#/funcionarios">Funcionários</a></li>
+                <li><a href="#/cargos">Cargos</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo">
+            <div class="cabecalho">
+                <div>
+                    <h1 id="titulo">GearBase</h1>
+                    <p id="resumo" class="resumo"></p>
+                </div>
+                <button type="button" id="botao-novo" class="botao botao-principal" hidden>Novo</button>
+            </div>
+
+            <div id="busca" class="busca">
+                <label for="filtro">Buscar</label>
+                <input type="search" id="filtro" autocomplete="off">
+            </div>
+
+            <p id="aviso" class="aviso" role="status" aria-live="polite" hidden></p>
+
+            <div id="area-tabela" class="area-tabela"></div>
+
+            <div id="area-inicio" class="inicio" hidden></div>
+        </main>
+    </div>
+
+    <dialog id="dialogo-form" aria-labelledby="form-titulo">
+        <form id="form">
+            <h2 id="form-titulo">Cadastro</h2>
+            <div id="form-campos" class="campos"></div>
+            <p id="form-erro" class="erro" role="alert" hidden></p>
+            <div class="acoes">
+                <button type="button" class="botao" id="form-cancelar">Cancelar</button>
+                <button type="submit" class="botao botao-principal" id="form-salvar">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dialogo-liberacao" aria-labelledby="liberacao-titulo">
+        <form id="form-liberacao">
+            <h2 id="liberacao-titulo">Liberação do gerente</h2>
+            <p id="liberacao-texto"></p>
+            <div class="campos">
+                <div class="campo">
+                    <label for="liberacao-matricula">Matrícula do gerente</label>
+                    <input id="liberacao-matricula" name="matricula" required maxlength="10"
+                           autocomplete="off" autocapitalize="characters" spellcheck="false">
+                </div>
+                <div class="campo">
+                    <label for="liberacao-senha">Senha</label>
+                    <input id="liberacao-senha" name="senha" type="password" required autocomplete="off">
+                </div>
+            </div>
+            <div class="acoes">
+                <button type="button" class="botao" id="liberacao-cancelar">Cancelar</button>
+                <button type="submit" class="botao botao-principal">Liberar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dialogo-excluir" aria-labelledby="excluir-titulo">
+        <h2 id="excluir-titulo">Excluir</h2>
+        <p id="excluir-texto"></p>
+        <p id="excluir-erro" class="erro" role="alert" hidden></p>
+        <div class="acoes">
+            <button type="button" class="botao" id="excluir-cancelar">Cancelar</button>
+            <button type="button" class="botao botao-perigo" id="excluir-confirmar">Excluir</button>
+        </div>
+    </dialog>
+</body>
+</html>
